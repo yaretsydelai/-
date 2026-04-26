@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科大讯飞 Pokee · 案例研究 · 张嘉烜</title>
+<link rel="stylesheet" href="../shared/site.css">
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  .cs-hero { padding: clamp(48px,8vw,120px) 0 clamp(32px,5vw,72px); border-bottom: 1px solid var(--rule); }
+  .cs-hero .kicker { font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:block; }
+  .cs-hero h1 { font-family:var(--serif-sc);font-weight:900;font-size:clamp(48px,8vw,120px);line-height:.95;letter-spacing:-.03em;margin:0 0 24px;max-width:16ch; }
+  .cs-hero h1 em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--accent); }
+  .cs-hero .lead { font-family:var(--serif-sc);font-size:clamp(18px,1.8vw,24px);line-height:1.7;max-width:60ch;margin:32px 0 0; }
+  .cs-meta { display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 0;border-top:1px solid var(--rule);margin-top:48px; }
+  @media (max-width:780px){.cs-meta{grid-template-columns:repeat(2,1fr);}}
+  .cs-meta .k{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px;}
+  .cs-meta .v{font-family:var(--serif-sc);font-size:15px;font-weight:500;}
+
+  .cs-section { padding: clamp(48px,7vw,96px) 0; border-top:1px solid var(--rule); }
+  .cs-head { display:flex;align-items:baseline;gap:20px;margin-bottom:36px; }
+  .cs-head .num { font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:clamp(60px,7vw,100px);line-height:.85;color:var(--accent); }
+  .cs-head h2 { font-family:var(--serif-sc);font-weight:700;font-size:clamp(32px,4vw,56px);line-height:1.05;letter-spacing:-.012em;margin:0; }
+  .cs-head h2 em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--muted); }
+  .cs-body { display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,4vw,64px); }
+  @media (max-width:900px){.cs-body{grid-template-columns:1fr;}}
+  .cs-body .side { font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted); }
+  .cs-body .copy p { font-family:var(--serif-sc);font-size:17px;line-height:1.8;margin:0 0 20px;max-width:60ch; }
+  .cs-body .copy p.drop-cap::first-letter { font-family:var(--serif-sc);font-weight:700;float:left;font-size:4.8em;line-height:.85;padding:4px 10px 0 0;color:var(--accent); }
+  .callout { margin:32px 0;padding:24px 28px;background:var(--paper-2);border-left:4px solid var(--accent);font-family:var(--serif-sc);font-size:19px;font-weight:500;line-height:1.6; }
+
+  .steps { list-style:none;padding:0;margin:20px 0;counter-reset:step; }
+  .steps li { counter-increment:step;position:relative;padding:16px 0 16px 56px;border-top:1px solid var(--rule);font-family:var(--serif-sc);font-size:16px;line-height:1.6; }
+  .steps li:last-child { border-bottom:1px solid var(--rule); }
+  .steps li::before { content:counter(step,decimal-leading-zero);position:absolute;left:0;top:18px;font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500;letter-spacing:.06em; }
+  .steps li b { font-family:var(--serif-sc);font-weight:700;color:var(--ink); }
+
+  .results-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:3px solid var(--rule);border-bottom:3px solid var(--rule);margin:24px 0; }
+  @media (max-width:780px){.results-grid{grid-template-columns:repeat(3,1fr);}}
+  .results-grid .cell { padding:28px 24px;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:8px; }
+  .results-grid .cell:first-child{border-left:0;}
+  .results-grid .v { font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:clamp(40px,5vw,72px);line-height:.9; }
+  .results-grid .v sup { font-family:var(--sans);font-style:normal;font-size:.38em;color:var(--accent);letter-spacing:.1em;margin-left:6px; }
+  .results-grid .l { font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted); }
+  .results-grid .d { font-family:var(--serif-sc);font-size:14px;line-height:1.5;margin-top:4px; }
+
+  .pull { padding: clamp(40px,6vw,80px) 0; background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule); }
+  .pull q { font-family:var(--serif-sc);font-weight:500;font-size:clamp(26px,3.4vw,52px);line-height:1.2;text-wrap:balance;display:block;max-width:24ch;margin:0 auto;text-align:center; }
+  .pull q::before { content:'"';color:var(--accent);font-family:var(--serif-en);font-size:1.4em;line-height:0;vertical-align:-.3em;margin-right:4px; }
+  .pull q::after { content:'"';color:var(--accent);font-family:var(--serif-en);font-size:1.4em;line-height:0;vertical-align:-.3em;margin-left:4px; }
+
+  .nav-cs { padding:40px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid var(--rule); }
+  @media (max-width:780px){.nav-cs{grid-template-columns:1fr;}}
+  .nav-cs a { display:block;padding:24px;background:var(--paper-2);transition:background .2s; }
+  .nav-cs a:hover { background:var(--ink);color:var(--paper); }
+  .nav-cs a:hover .nav-k { color:var(--accent); }
+  .nav-cs .nav-k { font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px; }
+  .nav-cs .nav-t { font-family:var(--serif-sc);font-weight:600;font-size:22px;line-height:1.2; }
+  .nav-cs a.next { text-align:right; }
+</style>
+</head>
+<body data-palette="chartreuse" data-type-mood="press" data-drama="loud">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="../index.html" class="brand">张嘉烜<span class="brand-en">Zhang Jiaxuan</span></a>
+    <nav class="nav hidden-mobile">
+      <a href="../index.html">首页</a><a href="../about.html">关于</a>
+      <a href="../projects.html" class="active">项目</a><a href="../skills.html">技能</a>
+      <a href="../blog.html">札记</a><a href="../contact.html">联系</a>
+    </nav>
+    <a class="nav-cta" href="../public/resume.pdf" download>简历 ↓</a>
+  </div>
+</header>
+
+<div class="issue-bar"><div class="issue-bar-inner">
+  <span>§ 02 · <span class="accent">案例研究 · Case 01/03</span></span>
+  <span class="hidden-mobile">POKEE · FUNCTION CALL · 0→1</span>
+  <span data-clock>—</span>
+</div></div>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <span class="kicker reveal">Case Study · No. 01 / 03</span>
+    <h1 class="reveal">科大讯飞<br><em>Pokee</em> · 会议录音助手 Agent</h1>
+    <p class="lead reveal">
+      这是一个<b>从 0 到 1</b> 的项目——为 AI 录音笔 Pokee 建立模型在会议录音场景下的意图理解与 Function Call 工具调用能力。我在其中独立输出规则框架、主导跨方对齐、管理 15 人标注团队，把"多轮开麦失效"这一典型 Badcase 从 AI 输出、训练数据、评测、业务四层彻底闭环。
+    </p>
+    <div class="cs-meta reveal">
+      <div><span class="k">Client</span><span class="v">科大讯飞</span></div>
+      <div><span class="k">Duration</span><span class="v">2025.11 — 2026.03</span></div>
+      <div><span class="k">Role</span><span class="v">Agent 数据工程师</span></div>
+      <div><span class="k">Stage</span><span class="v">新启 · 0 → 1</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-head reveal"><span class="num">01</span><h2>背景<em>&nbsp; — the brief</em></h2></div>
+    <div class="cs-body reveal">
+      <div class="side">What was the problem?</div>
+      <div class="copy">
+        <p class="drop-cap">"科大讯飞 AI 录音笔 Pokee"是一台需要在会议场景里真正"懂你"的硬件——用户按下开麦键之后，它要识别对话意图、调用正确的工具、串联多个步骤，在复杂多轮交互里给出人性化回复。</p>
+        <p>项目启动时，模型在该场景下的工具调用能力几乎是空白。作为一个从 0 开始的训练数据建设任务，它需要同时回答三个问题：<b>数据怎么建？规则怎么定？质量怎么保？</b></p>
+        <p>我的任务是和产品、工程、算法三方对齐，从多维度构建 Intent 与 Function Call 的训练数据，持续优化助手在复杂多轮与多工具串联场景下的调用准确性与回复质量。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-head reveal"><span class="num">02</span><h2>我的动作<em>&nbsp; — what I did</em></h2></div>
+    <div class="cs-body reveal">
+      <div class="side">Four parallel tracks</div>
+      <div class="copy">
+        <p>我把工作拆成四条并行的线索，每一条都需要独立推进，又必须最终汇合到同一个闭环里。</p>
+        <ol class="steps">
+          <li><b>规则框架从 0 开始写。</b>独立输出初版规则文档，针对 Intent 理解与 Function Call 调用两大类场景制定标注定义、边界条件和反例集合。</li>
+          <li><b>爬坡期的跨团队联调。</b>每周 3 次跨团队联调会，把产品的交付目标、工程的接口约束、算法的能力评估三方的语言统一到同一份规则里——推动规则对齐与问题收敛。</li>
+          <li><b>标注团队与闭环。</b>独立管理 15 人标注团队，设计 3-5 天准入考核机制 与 9 步标注闭环，人均日产能稳定在 10-15 条，保障按期交付。</li>
+          <li><b>Badcase 四层归因。</b>针对"多轮开麦失效"这一典型问题，从规则、数据、执行、工程四个层面同时排查，最终定位到"规则盲区 + 工程判断与规则不对齐"两个并行原因。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pull reveal">
+  <q>真正的闭环不是"改了规则就完事"——它要从 AI 输出、训练数据、模型评测、线上业务四层都验证一遍。</q>
+</section>
+
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-head reveal"><span class="num">03</span><h2>评测支撑<em>&nbsp; — evaluation</em></h2></div>
+    <div class="cs-body reveal">
+      <div class="side">How did we measure?</div>
+      <div class="copy">
+        <p>光有数据不够，还要知道模型"是不是真的变好了"。我针对录音场景的关键能力点——多工具串联、多轮开麦、语言区分、异常场景——构建专项评测集，在 <b>Function Call 调用准确率、Intent 理解准确率、多轮上下文一致性</b> 等核心维度下，量化评估模型版本迭代效果差异。</p>
+        <div class="callout">评测结果会反哺到规则和数据侧，形成"规则 → 数据 → 训练 → 评测 → 规则"的完整闭环。</div>
+        <p>这套机制让我们在 Badcase 修复之后，能在 AI 输出层、训练数据层、评测层、下游业务层分别验证——确保问题真正被修掉，而不是"看起来被修掉"。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-head reveal"><span class="num">04</span><h2>关键成果<em>&nbsp; — results</em></h2></div>
+    <div class="results-grid reveal">
+      <div class="cell"><span class="v">1.5-2<sup>万</sup></span><span class="l">Total Data</span><span class="d">录音场景 Agent 累计产出</span></div>
+      <div class="cell"><span class="v">1<sup>万</sup></span><span class="l">High-Quality</span><span class="d">经质检漏斗交付 SFT + 评测</span></div>
+      <div class="cell"><span class="v">95<sup>%</sup></span><span class="l">Pass Rate</span><span class="d">标注准入率长期稳定</span></div>
+    </div>
+    <div class="cs-body reveal" style="margin-top:28px;">
+      <div class="side">Personal growth</div>
+      <div class="copy">
+        <p>项目之外，我自己也完成了一次角色转变——从"执行规则的训练师"成长为"定义规则的负责人"。我不再是等别人告诉我怎么标，而是能独立判断规则盲区、主导跨方对齐、推动闭环修复。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="nav-cs" style="border-bottom:1px solid var(--rule);">
+  <a href="../projects.html">
+    <span class="nav-k">← 返回</span>
+    <span class="nav-t">所有项目</span>
+  </a>
+  <a href="xiaoduo.html" class="next">
+    <span class="nav-k">下一个 · Case 02 →</span>
+    <span class="nav-t">成都晓多 · 电商智能客服 Agent</span>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><h4>Colophon</h4><p style="font-family:var(--serif-sc);font-size:15px;line-height:1.7;color:#c9c4b5;margin:0;max-width:42ch;">张嘉烜 · 个人杂志。</p></div>
+      <div><h4>Sections</h4><ul><li><a href="../index.html">首页</a></li><li><a href="../about.html">关于</a></li><li><a href="../projects.html">项目</a></li><li><a href="../skills.html">技能</a></li></ul></div>
+      <div><h4>More</h4><ul><li><a href="../blog.html">札记</a></li><li><a href="../contact.html">联系</a></li><li><a href="../public/resume.pdf" download>简历 PDF</a></li></ul></div>
+      <div><h4>Channels</h4><ul><li><a href="mailto:2128324212@stu.htu.edu.cn">Email</a></li><li><a href="tel:+8618039304837">+86 180 3930 4837</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Zhang Jiaxuan</span><span>Issue N°004 · Chengdu</span></div>
+  </div>
+</footer>
+
+<script src="../shared/site.js"></script>
+</body>
+</html>

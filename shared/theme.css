@@ -1,0 +1,93 @@
+/* =========================================================
+   Theme modes — palette / type-mood / cover-drama
+   Applied via body[data-palette], body[data-type-mood], body[data-drama]
+   ========================================================= */
+@import url('https://fonts.font.im/css2?family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&display=swap');
+
+body[data-palette="vermilion"] { --accent: #c8422a; --accent-ink:#8a2a17; --paper:#f4f0e8; --paper-2:#ebe5d7; --paper-3:#dfd7c4; --ink:#111110; --rule:#1a1a18; --muted:#6b6658; }
+body[data-palette="cobalt"]    { --accent: #1e45b8; --accent-ink:#122a7a; --paper:#f1efe9; --paper-2:#e5e3db; --paper-3:#d6d3c8; --ink:#0e1020; --rule:#1a1d30; --muted:#5f6170; }
+body[data-palette="chartreuse"]{ --accent: #c7e23d; --accent-ink:#9eb330; --paper:#141410; --paper-2:#1d1d18; --paper-3:#262620; --ink:#f2efe3; --rule:#2a2a22; --muted:#8a8878; }
+body[data-palette="sepia"]     { --accent: #a06a2c; --accent-ink:#6f471b; --paper:#efe7d6; --paper-2:#e3d9c2; --paper-3:#d6c9ac; --ink:#2a1f10; --rule:#3a2b18; --muted:#7a6a4a; }
+
+body[data-palette="chartreuse"] { background: var(--paper); color: var(--ink); }
+body[data-palette="chartreuse"] ::selection { background: var(--accent); color: var(--ink); }
+body[data-palette="chartreuse"] .masthead { background: var(--paper); border-bottom-color: var(--rule); }
+body[data-palette="chartreuse"] .issue-bar { background: var(--paper); border-bottom-color: var(--rule); }
+body[data-palette="chartreuse"] .pull-quote, body[data-palette="chartreuse"] .pull { background: var(--paper-2); }
+body[data-palette="chartreuse"] .ticker { background: var(--accent); color: var(--ink); }
+body[data-palette="chartreuse"] .ticker-track .dot { color: var(--ink); }
+body[data-palette="chartreuse"] .dossier-card { background: var(--paper-3); color: var(--ink); }
+body[data-palette="chartreuse"] .dossier-card .kicker { color: var(--accent-ink); }
+body[data-palette="chartreuse"] .dossier-card .meta-row { border-color: var(--rule); color: var(--ink); }
+body[data-palette="chartreuse"] .dossier-card .meta-row .k { color: var(--muted); }
+body[data-palette="chartreuse"] .dossier-card .mono-small { color: var(--muted); }
+body[data-palette="chartreuse"] .site-footer { background: var(--paper-2); color: var(--ink); border-top-color: var(--rule); }
+body[data-palette="chartreuse"] .site-footer .footer-grid h4 { color: var(--muted); }
+body[data-palette="chartreuse"] .site-footer .footer-bottom { color: var(--muted); border-top-color: var(--rule); }
+body[data-palette="chartreuse"] .feature-visual { background: var(--paper-2); color: var(--ink); }
+body[data-palette="chartreuse"] .feature-visual .bottom-meta { color: var(--muted); }
+body[data-palette="chartreuse"] .btn { border-color: var(--ink); color: var(--ink); }
+body[data-palette="chartreuse"] .btn:hover { background: var(--ink); color: var(--paper); }
+body[data-palette="chartreuse"] .tag.solid { background: var(--ink); color: var(--paper); }
+body[data-palette="chartreuse"] .edu-strip { background: var(--paper-2); color: var(--ink); }
+body[data-palette="chartreuse"] .edu-strip .k { color: var(--muted); }
+body[data-palette="chartreuse"] .principles { background: var(--paper-2); }
+body[data-palette="chartreuse"] .principle { background: var(--paper); }
+body[data-palette="chartreuse"] .index-card { background: var(--paper-2); }
+body[data-palette="chartreuse"] .index-card:hover { background: var(--paper-3); }
+body[data-palette="chartreuse"] .essay-item { background: var(--paper-2); }
+body[data-palette="chartreuse"] .stories .story:hover { background: var(--paper-2); }
+body[data-palette="chartreuse"] .callout { background: var(--paper-3); }
+body[data-palette="chartreuse"] .nav-cs a { background: var(--paper-2); }
+
+/* Type moods */
+body[data-type-mood="press"] {
+  --serif-en: 'Playfair Display','Times New Roman',serif;
+}
+body[data-type-mood="press"] .display,
+body[data-type-mood="press"] .headline,
+body[data-type-mood="press"] .section-title,
+body[data-type-mood="press"] .cover-title h1,
+body[data-type-mood="press"] .page-hero h1,
+body[data-type-mood="press"] .cs-hero h1,
+body[data-type-mood="press"] .contact-cta h2 {
+  font-weight: 900; letter-spacing: -0.04em;
+}
+body[data-type-mood="press"] .eyebrow,
+body[data-type-mood="press"] .nav,
+body[data-type-mood="press"] .issue-bar,
+body[data-type-mood="press"] .nav-cta,
+body[data-type-mood="press"] .btn,
+body[data-type-mood="press"] .tag,
+body[data-type-mood="press"] .mono-label,
+body[data-type-mood="press"] .ticker {
+  font-family: 'Oswald', var(--sans) !important;
+  font-weight: 600; letter-spacing: 0.16em;
+}
+
+body[data-type-mood="minimal"] .display,
+body[data-type-mood="minimal"] .headline,
+body[data-type-mood="minimal"] .section-title,
+body[data-type-mood="minimal"] .cover-title h1,
+body[data-type-mood="minimal"] .page-hero h1,
+body[data-type-mood="minimal"] .cs-hero h1,
+body[data-type-mood="minimal"] .contact-cta h2 { font-weight: 300 !important; letter-spacing: -0.01em; }
+body[data-type-mood="minimal"] .sub-headline,
+body[data-type-mood="minimal"] .index-card h3,
+body[data-type-mood="minimal"] .story .story-title { font-weight: 400 !important; }
+body[data-type-mood="minimal"] .body-text,
+body[data-type-mood="minimal"] .lede { font-weight: 300 !important; }
+body[data-type-mood="minimal"] .section { padding: clamp(72px,12vw,180px) 0; }
+
+/* Drama levels */
+body[data-drama="hushed"] .feature-visual .cn-char { opacity: 0.18; font-size: clamp(100px,18vw,240px); }
+body[data-drama="hushed"] .feature-visual .giant-initial { display: none; }
+body[data-drama="hushed"] .ticker-track { animation-duration: 90s; }
+
+body[data-drama="operatic"] .feature-visual .cn-char { font-size: clamp(180px,34vw,420px); opacity: 1; color: var(--accent); }
+body[data-drama="operatic"] .feature-visual .giant-initial { font-size: clamp(260px,50vw,560px); color: var(--accent); mix-blend-mode: screen; }
+body[data-drama="operatic"] .cover-title h1 { font-size: clamp(80px,16vw,280px); letter-spacing: -0.04em; font-weight: 900; }
+body[data-drama="operatic"] .ticker { background: var(--accent); color: var(--ink); }
+body[data-drama="operatic"] .ticker-track { animation-duration: 22s; }
+body[data-drama="operatic"] .ticker-track .dot { color: var(--ink); }
+body[data-drama="operatic"] .section-header .section-title::after { content: ' ●'; color: var(--accent); }
