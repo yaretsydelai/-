@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目案例 · 张嘉烜</title>
+<link rel="stylesheet" href="shared/site.css">
+<link rel="stylesheet" href="shared/theme.css">
+<style>
+  .page-hero {
+    padding: clamp(60px, 10vw, 140px) 0 clamp(48px, 6vw, 80px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .page-hero .kicker {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 24px; display: block;
+  }
+  .page-hero h1 {
+    font-family: var(--serif-sc); font-weight: 900;
+    font-size: clamp(64px, 12vw, 200px); line-height: 0.92;
+    letter-spacing: -0.035em; margin: 0;
+  }
+  .page-hero h1 em {
+    font-family: var(--serif-en); font-style: italic; font-weight: 500; color: var(--accent);
+  }
+  .page-hero .intro {
+    font-family: var(--serif-sc); font-size: 20px; line-height: 1.7;
+    max-width: 62ch; margin-top: 40px; color: var(--ink);
+  }
+
+  .project {
+    padding: clamp(40px, 6vw, 80px) 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project:last-of-type { border-bottom: 1px solid var(--rule); }
+  .project-inner {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: clamp(24px, 3vw, 48px);
+  }
+  @media (max-width: 780px) { .project-inner { grid-template-columns: 1fr; gap: 12px; } }
+  .project .big-idx {
+    font-family: var(--serif-en); font-style: italic; font-weight: 500;
+    font-size: clamp(64px, 8vw, 120px); line-height: 0.85; color: var(--muted);
+  }
+  .project .meta-row {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+  }
+  .project .meta-row .accent { color: var(--accent); font-weight: 500; }
+  .project h2 {
+    font-family: var(--serif-sc); font-weight: 700;
+    font-size: clamp(36px, 4.6vw, 68px); line-height: 1.05;
+    letter-spacing: -0.015em; margin: 0 0 16px;
+  }
+  .project h2 .sub {
+    display: block; font-family: var(--serif-en); font-style: italic; font-weight: 500;
+    font-size: 0.45em; color: var(--muted); margin-top: 10px; letter-spacing: 0;
+  }
+  .project .excerpt {
+    font-family: var(--serif-sc); font-size: 18px; line-height: 1.7;
+    max-width: 62ch; margin: 0 0 28px;
+  }
+  .project .outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 24px 0 28px;
+    max-width: 720px;
+  }
+  @media (max-width: 780px) { .project .outcomes { grid-template-columns: repeat(3, 1fr); } }
+  .project .outcomes .out {
+    padding: 18px 18px 18px 0; border-left: 1px solid var(--rule);
+    padding-left: 18px;
+  }
+  .project .outcomes .out:first-child { border-left: 0; padding-left: 0; }
+  .project .outcomes .v {
+    font-family: var(--serif-en); font-style: italic; font-weight: 500;
+    font-size: clamp(28px, 3vw, 42px); line-height: 1; color: var(--ink);
+  }
+  .project .outcomes .v sup {
+    font-family: var(--sans); font-style: normal; font-size: 0.4em;
+    color: var(--accent); letter-spacing: 0.1em; margin-left: 4px;
+  }
+  .project .outcomes .l {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-top: 4px;
+  }
+  .project .go-link {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--sans); font-size: 12px; letter-spacing: 0.22em;
+    text-transform: uppercase; border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px; transition: all 0.2s;
+  }
+  .project .go-link:hover { color: var(--accent); border-color: var(--accent); }
+  .project .go-link::after { content: '→'; font-family: var(--serif-en); font-size: 20px; }
+  .project .tags { margin-top: 10px; }
+</style>
+</head>
+<body data-palette="chartreuse" data-type-mood="press" data-drama="loud">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="brand">张嘉烜<span class="brand-en">Zhang Jiaxuan</span></a>
+    <nav class="nav hidden-mobile">
+      <a href="index.html">首页</a>
+      <a href="about.html">关于</a>
+      <a href="projects.html" class="active">项目</a>
+      <a href="skills.html">技能</a>
+      <a href="blog.html">札记</a>
+      <a href="contact.html">联系</a>
+    </nav>
+    <a class="nav-cta" href="public/resume.pdf" download>简历 ↓</a>
+  </div>
+</header>
+
+<div class="issue-bar">
+  <div class="issue-bar-inner">
+    <span>§ 02 · <span class="accent">项目案例 · Case Studies</span></span>
+    <span class="hidden-mobile">3 STORIES · AGENT DATA ENGINEERING</span>
+    <span data-clock>—</span>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker reveal">Chapter Two · Selected Work</span>
+    <h1 class="reveal">项目<br><em>in depth</em></h1>
+    <p class="intro reveal">
+      三个项目的完整复盘：从 <b>Pokee</b> 会议录音 Agent 的 0→1 能力建设，到<b>晓多</b>电商客服的训练 + 评测闭环，再到<b>竞品对标</b>评测体系。每个项目都回答同一组问题——<em class="italic-serif">背景是什么？我做了什么？我学到了什么？</em>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <article class="project reveal">
+      <div class="project-inner">
+        <span class="big-idx">01</span>
+        <div>
+          <div class="meta-row">
+            <span class="accent">● 0→1 · 主导</span>
+            <span>2025.11 — 2026.03</span>
+            <span>科大讯飞 Pokee</span>
+            <span>FUNCTION CALL · INTENT</span>
+          </div>
+          <h2>科大讯飞「录音笔 Pokee」<br>会议录音助手 Agent
+            <span class="sub">From Zero to One · Function Call 能力建设</span>
+          </h2>
+          <p class="excerpt">
+            新启项目，从 0 到 1 建立模型在会议录音场景下的工具调用能力。独立输出初版规则文档、组织跨团队联调，在多轮开麦失效这个典型 Badcase 上完成"规则→数据→执行→工程"四层闭环修复。
+          </p>
+
+          <div class="outcomes">
+            <div class="out"><div class="v">1.5-2<sup>万</sup></div><div class="l">Data Built</div></div>
+            <div class="out"><div class="v">15<sup>人</sup></div><div class="l">Team Led</div></div>
+            <div class="out"><div class="v">95<sup>%</sup></div><div class="l">Pass Rate</div></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Function Call</span>
+            <span class="tag">Intent</span>
+            <span class="tag accent">Badcase 归因</span>
+            <span class="tag">规则文档</span>
+            <span class="tag">标注管理</span>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a class="go-link" href="projects/pokee.html">查看完整案例</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="project-inner">
+        <span class="big-idx">02</span>
+        <div>
+          <div class="meta-row">
+            <span class="accent">● 全流程 · 执行</span>
+            <span>2025.06 — 2025.10</span>
+            <span>成都晓多科技</span>
+            <span>SFT · EVAL · AUTOMATION</span>
+          </div>
+          <h2>电商智能客服 Agent<br>数据构建 &amp; 评测
+            <span class="sub">自研 Python 脚本 · 单人日产能 2×</span>
+          </h2>
+          <p class="excerpt">
+            为中小电商构建覆盖售前—售中—售后的智能客服 Agent。自研 Python 自动化数据构建脚本（场景矩阵 + Prompt 模板 + Qwen API 批量调用），交付 5000 条训练数据 + 500 条评测集，Base vs 微调 A/B 对比整体效果从 62% → 85.8%。
+          </p>
+
+          <div class="outcomes">
+            <div class="out"><div class="v">+23.8<sup>pp</sup></div><div class="l">Effect Lift</div></div>
+            <div class="out"><div class="v">5000</div><div class="l">SFT Data</div></div>
+            <div class="out"><div class="v">2<sup>×</sup></div><div class="l">Productivity</div></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Python 脚本</span>
+            <span class="tag">Qwen API</span>
+            <span class="tag accent">5 维评测</span>
+            <span class="tag">多维归因</span>
+            <span class="tag">可视化分析</span>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a class="go-link" href="projects/xiaoduo.html">查看完整案例</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="project-inner">
+        <span class="big-idx">03</span>
+        <div>
+          <div class="meta-row">
+            <span class="accent">● 负责人</span>
+            <span>2026.01 — 2026.03</span>
+            <span>会议录音助手 Agent</span>
+            <span>EVAL FRAMEWORK</span>
+          </div>
+          <h2>会议录音助手 Agent<br>评测项目（项目负责人）
+            <span class="sub">6 维度评测体系 · 竞品对标盲评</span>
+          </h2>
+          <p class="excerpt">
+            从 0 到 1 搭建录音场景 Agent 评测体系，独立设计 6 个评测维度；主导对标 4 家主流竞品各 100 条样本盲评，输出"2 赢 1 平 1 学习"结论；建立 Badcase 收集与归类机制。
+          </p>
+
+          <div class="outcomes">
+            <div class="out"><div class="v">6</div><div class="l">Eval Dims</div></div>
+            <div class="out"><div class="v">4</div><div class="l">Competitors</div></div>
+            <div class="out"><div class="v">400+</div><div class="l">Blind Samples</div></div>
+          </div>
+
+          <div class="tags">
+            <span class="tag">评测体系</span>
+            <span class="tag">竞品对标</span>
+            <span class="tag accent">质检管理</span>
+            <span class="tag">Badcase 沉淀</span>
+            <span class="tag">自动汇总</span>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a class="go-link" href="projects/evaluation.html">查看完整案例</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="contact-cta" style="padding: clamp(60px,10vw,140px) 0; text-align:center; border-top: 3px solid var(--rule); margin-top: 80px;">
+  <div class="wrap reveal">
+    <span class="eyebrow">What's Next</span>
+    <h2 style="font-family: var(--serif-sc); font-weight: 700; font-size: clamp(44px, 6vw, 96px); line-height: 1; letter-spacing: -0.02em; margin: 20px 0;">
+      想聊一个<em class="italic-serif accent-text">具体</em>的项目？
+    </h2>
+    <div style="display:flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+      <a class="btn accent btn-arrow" href="contact.html">联系我</a>
+      <a class="btn btn-arrow" href="public/resume.pdf" download>下载简历</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><h4>Colophon</h4><p style="font-family: var(--serif-sc); font-size: 15px; line-height: 1.7; color: #c9c4b5; margin: 0; max-width: 42ch;">张嘉烜 · 个人杂志。一份关于 AI Agent 数据工程的编辑性实践。</p></div>
+      <div><h4>Sections</h4><ul><li><a href="index.html">首页</a></li><li><a href="about.html">关于</a></li><li><a href="projects.html">项目</a></li><li><a href="skills.html">技能</a></li></ul></div>
+      <div><h4>More</h4><ul><li><a href="blog.html">札记</a></li><li><a href="contact.html">联系</a></li><li><a href="public/resume.pdf" download>简历 PDF</a></li></ul></div>
+      <div><h4>Channels</h4><ul><li><a href="mailto:2128324212@stu.htu.edu.cn">Email</a></li><li><a href="tel:+8618039304837">+86 180 3930 4837</a></li><li>WeChat · 见联系页</li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Zhang Jiaxuan</span><span>Issue N°004 · Chengdu, China</span></div>
+  </div>
+</footer>
+
+<script src="shared/site.js"></script>
+</body>
+</html>

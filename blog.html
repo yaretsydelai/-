@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>札记 · 张嘉烜</title>
+<link rel="stylesheet" href="shared/site.css">
+<link rel="stylesheet" href="shared/theme.css">
+<style>
+  .page-hero { padding: clamp(60px,10vw,140px) 0 clamp(40px,6vw,80px);border-bottom:1px solid var(--rule); }
+  .page-hero .kicker { font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:block; }
+  .page-hero h1 { font-family:var(--serif-sc);font-weight:900;font-size:clamp(64px,12vw,200px);line-height:.92;letter-spacing:-.035em;margin:0; }
+  .page-hero h1 em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--accent); }
+  .page-hero .intro { font-family:var(--serif-sc);font-size:clamp(18px,1.6vw,22px);line-height:1.7;max-width:60ch;margin:32px 0 0; }
+
+  .drafts { padding:clamp(48px,8vw,120px) 0; }
+  .drafts-head { display:flex;justify-content:space-between;align-items:baseline;padding-bottom:24px;border-bottom:1px solid var(--rule);margin-bottom:0; }
+  .drafts-head h2 { font-family:var(--serif-sc);font-weight:700;font-size:clamp(28px,3vw,40px);margin:0; }
+
+  .draft { display:grid;grid-template-columns:120px 1fr 180px;gap:32px;padding:36px 0;border-bottom:1px solid var(--rule);align-items:start; }
+  @media (max-width:780px){.draft{grid-template-columns:1fr;gap:12px;}}
+  .draft .num { font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:48px;line-height:.85;color:var(--muted); }
+  .draft h3 { font-family:var(--serif-sc);font-weight:700;font-size:clamp(22px,2.2vw,32px);line-height:1.2;letter-spacing:-.01em;margin:0 0 14px; }
+  .draft .excerpt { font-family:var(--serif-sc);font-size:16px;line-height:1.7;color:var(--ink);max-width:60ch;margin:0 0 14px; }
+  .draft .meta { display:flex;gap:14px;flex-wrap:wrap; }
+  .draft .status { font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:6px 12px;display:inline-block;margin-bottom:10px;background:var(--paper); }
+  .draft .side { font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right; }
+  .draft .side .date { font-family:var(--mono);font-size:12px;color:var(--ink);letter-spacing:.05em;display:block;margin-bottom:8px; }
+  @media (max-width:780px){.draft .side{text-align:left;}}
+
+  .subscribe { padding:clamp(48px,8vw,120px) 0;border-top:3px solid var(--rule);border-bottom:3px solid var(--rule);background:var(--paper-2);text-align:center; }
+  .subscribe h2 { font-family:var(--serif-sc);font-weight:700;font-size:clamp(36px,5vw,72px);line-height:1.05;letter-spacing:-.02em;margin:0 auto;max-width:18ch;text-wrap:balance; }
+  .subscribe h2 em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--accent); }
+  .subscribe p { font-family:var(--serif-sc);font-size:18px;line-height:1.6;max-width:46ch;margin:20px auto 32px; }
+</style>
+</head>
+<body data-palette="chartreuse" data-type-mood="press" data-drama="loud">
+
+<header class="masthead"><div class="masthead-inner">
+  <a href="index.html" class="brand">张嘉烜<span class="brand-en">Zhang Jiaxuan</span></a>
+  <nav class="nav hidden-mobile">
+    <a href="index.html">首页</a><a href="about.html">关于</a>
+    <a href="projects.html">项目</a><a href="skills.html">技能</a>
+    <a href="blog.html" class="active">札记</a><a href="contact.html">联系</a>
+  </nav>
+  <a class="nav-cta" href="public/resume.pdf" download>简历 ↓</a>
+</div></header>
+
+<div class="issue-bar"><div class="issue-bar-inner">
+  <span>§ 04 · <span class="accent">札记 · Essays · Coming Soon</span></span>
+  <span class="hidden-mobile">FROM THE NOTEBOOK · DISPATCHES</span>
+  <span data-clock>—</span>
+</div></div>
+
+<section class="page-hero"><div class="wrap">
+  <span class="kicker reveal">Chapter Four · The Notebook</span>
+  <h1 class="reveal">札记<br><em>dispatches</em></h1>
+  <p class="intro reveal">
+    关于 Agent 评测、Prompt 设计、Badcase 归因的工作笔记——把做过的项目拆解成可以复用的方法论。这里是<b>预告</b>，前两篇正在撰写中，很快与大家见面。
+  </p>
+</div></section>
+
+<section class="drafts"><div class="wrap">
+  <div class="drafts-head reveal">
+    <h2>计划中的文章<em style="font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:.6em;margin-left:12px;">In the Pipeline</em></h2>
+    <span class="small">3 drafts · 2026</span>
+  </div>
+
+  <article class="draft reveal">
+    <span class="num">01</span>
+    <div>
+      <span class="status">Draft · 撰写中</span>
+      <h3>Agent 评测体系从 0 到 1：我的 6 个维度</h3>
+      <p class="excerpt">
+        在录音笔和电商客服两个场景里，我都独立搭建过评测体系。这篇把"工具调用、意图理解、思考过程、回复准确、多轮一致性、异常处理"这六个维度讲清楚——为什么这六个，权重怎么分，怎么把分数反馈回规则和数据侧形成闭环。
+      </p>
+      <div class="meta"><span class="tag">Evaluation</span><span class="tag">Agent</span><span class="tag accent">Method</span></div>
+    </div>
+    <div class="side"><span class="date">2026.05</span>预计 · 10 min 阅读</div>
+  </article>
+
+  <article class="draft reveal">
+    <span class="num">02</span>
+    <div>
+      <span class="status">Draft · 撰写中</span>
+      <h3>Badcase 四层归因法：从 AI 输出回到规则</h3>
+      <p class="excerpt">
+        "多轮开麦失效"是我处理过最典型的一个 Badcase。规则、数据、执行、工程——为什么每一层都要过一遍？以及四层都修完之后，如何从 AI 输出、训练数据、评测、业务四层验证闭环，而不是"表面看起来修好了"。
+      </p>
+      <div class="meta"><span class="tag">Badcase</span><span class="tag accent">Root Cause</span><span class="tag">Method</span></div>
+    </div>
+    <div class="side"><span class="date">2026.06</span>预计 · 12 min 阅读</div>
+  </article>
+
+  <article class="draft reveal">
+    <span class="num">03</span>
+    <div>
+      <span class="status">Draft · 构思中</span>
+      <h3>自研一个 Prompt 批量生成脚本：场景矩阵 × 模板 × API</h3>
+      <p class="excerpt">
+        把我在晓多做的那个让单人日产能翻倍的脚本讲透——不是简单的 API 调用，而是"场景矩阵 + Prompt 模板 + 批量调用 + 质检兜底"这一整套工程化的流程。附可以直接上手的代码模板。
+      </p>
+      <div class="meta"><span class="tag">Python</span><span class="tag">Prompt</span><span class="tag accent">Automation</span></div>
+    </div>
+    <div class="side"><span class="date">2026.07</span>预计 · 15 min 阅读</div>
+  </article>
+</div></section>
+
+<section class="subscribe reveal"><div class="wrap">
+  <span class="eyebrow">Stay tuned</span>
+  <h2 style="margin-top:16px;">文章发布时，<br><em>来看看</em>。</h2>
+  <p>暂未开放订阅——你可以把这个网站加入书签，或者直接联系我聊一聊这些话题。</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn accent btn-arrow" href="contact.html">联系我</a>
+    <a class="btn btn-arrow" href="projects.html">先看项目</a>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-grid">
+    <div><h4>Colophon</h4><p style="font-family:var(--serif-sc);font-size:15px;line-height:1.7;color:#c9c4b5;margin:0;max-width:42ch;">张嘉烜 · 个人杂志。</p></div>
+    <div><h4>Sections</h4><ul><li><a href="index.html">首页</a></li><li><a href="about.html">关于</a></li><li><a href="projects.html">项目</a></li><li><a href="skills.html">技能</a></li></ul></div>
+    <div><h4>More</h4><ul><li><a href="blog.html">札记</a></li><li><a href="contact.html">联系</a></li><li><a href="public/resume.pdf" download>简历 PDF</a></li></ul></div>
+    <div><h4>Channels</h4><ul><li><a href="mailto:2128324212@stu.htu.edu.cn">Email</a></li><li><a href="tel:+8618039304837">+86 180 3930 4837</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Zhang Jiaxuan</span><span>Issue N°004 · Chengdu</span></div>
+</div></footer>
+
+<script src="shared/site.js"></script>
+</body></html>

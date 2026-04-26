@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技能 · 张嘉烜</title>
+<link rel="stylesheet" href="shared/site.css">
+<link rel="stylesheet" href="shared/theme.css">
+<style>
+  .page-hero { padding: clamp(60px,10vw,140px) 0 clamp(40px,6vw,80px); border-bottom:1px solid var(--rule); }
+  .page-hero .kicker { font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:block; }
+  .page-hero h1 { font-family:var(--serif-sc);font-weight:900;font-size:clamp(64px,12vw,200px);line-height:.92;letter-spacing:-.035em;margin:0; }
+  .page-hero h1 em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--accent); }
+  .page-hero .intro { font-family:var(--serif-sc);font-size:clamp(18px,1.6vw,22px);line-height:1.7;max-width:60ch;margin:32px 0 0; }
+
+  .skill-block { padding: clamp(48px,7vw,96px) 0; border-top:1px solid var(--rule); }
+  .skill-head { display:flex;align-items:baseline;gap:24px;margin-bottom:32px; }
+  .skill-head .num { font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:clamp(60px,6vw,100px);line-height:.85;color:var(--accent); }
+  .skill-head h2 { font-family:var(--serif-sc);font-weight:700;font-size:clamp(32px,4vw,56px);line-height:1.05;letter-spacing:-.012em;margin:0; }
+  .skill-head h2 em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--muted); }
+
+  .skill-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:3px solid var(--rule);border-bottom:3px solid var(--rule); }
+  @media (max-width:780px){.skill-grid{grid-template-columns:1fr;}}
+  .skill { padding:32px;border-left:1px solid var(--rule);border-top:1px solid var(--rule); }
+  .skill:first-child,.skill:nth-child(2){border-top:0;}
+  @media (max-width:780px){.skill{border-left:0;}.skill:nth-child(2){border-top:1px solid var(--rule);}}
+  .skill .head { display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px; }
+  .skill h3 { font-family:var(--serif-sc);font-weight:700;font-size:26px;line-height:1.15;margin:0; }
+  .skill h3 em { display:block;font-family:var(--serif-en);font-style:italic;font-weight:500;font-size:15px;color:var(--muted);margin-top:4px; }
+  .skill .lvl { font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.06em; }
+  .skill .bar { height:4px;background:var(--paper-3);position:relative;overflow:hidden;margin:16px 0; }
+  .skill .bar span { position:absolute;inset:0 auto 0 0;background:var(--accent); }
+  .skill p { font-family:var(--serif-sc);font-size:15px;line-height:1.65;color:var(--ink);margin:0; }
+  .skill .proofs { margin-top:12px;display:flex;gap:8px;flex-wrap:wrap; }
+
+  .stack-list { display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule); }
+  @media (max-width:780px){.stack-list{grid-template-columns:repeat(2,1fr);}}
+  .stack-list .it { padding:18px 16px;border-left:1px solid var(--rule); }
+  .stack-list .it:first-child{border-left:0;}
+  @media (max-width:780px){.stack-list .it:nth-child(2n+1){border-left:0;}.stack-list .it:nth-child(n+3){border-top:1px solid var(--rule);}}
+  .stack-list .it .n { font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em; }
+  .stack-list .it .t { font-family:var(--serif-sc);font-weight:600;font-size:17px;margin-top:4px; }
+  .stack-list .it .u { font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:6px; }
+
+  .manifesto { padding:clamp(48px,8vw,120px) 0; background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule); }
+  .manifesto .big { font-family:var(--serif-sc);font-weight:700;font-size:clamp(36px,5vw,72px);line-height:1.1;letter-spacing:-.015em;max-width:18ch;text-wrap:balance; }
+  .manifesto .big em { font-family:var(--serif-en);font-style:italic;font-weight:500;color:var(--accent); }
+</style>
+</head>
+<body data-palette="chartreuse" data-type-mood="press" data-drama="loud">
+
+<header class="masthead"><div class="masthead-inner">
+  <a href="index.html" class="brand">张嘉烜<span class="brand-en">Zhang Jiaxuan</span></a>
+  <nav class="nav hidden-mobile">
+    <a href="index.html">首页</a><a href="about.html">关于</a>
+    <a href="projects.html">项目</a><a href="skills.html" class="active">技能</a>
+    <a href="blog.html">札记</a><a href="contact.html">联系</a>
+  </nav>
+  <a class="nav-cta" href="public/resume.pdf" download>简历 ↓</a>
+</div></header>
+
+<div class="issue-bar"><div class="issue-bar-inner">
+  <span>§ 03 · <span class="accent">技能图谱 · Skills</span></span>
+  <span class="hidden-mobile">PYTHON · PROMPT · AGENT · AUTOMATION</span>
+  <span data-clock>—</span>
+</div></div>
+
+<section class="page-hero"><div class="wrap">
+  <span class="kicker reveal">Chapter Three · Skills & Stack</span>
+  <h1 class="reveal">技能<br><em>field guide</em></h1>
+  <p class="intro reveal">
+    按"熟练度 × 使用深度"分成<b>四大能力圈</b>——每一项都有实际项目作为证据，不是写在纸上的清单，而是用过、踩过坑、产出过成果的工具。
+  </p>
+</div></section>
+
+<section class="skill-block"><div class="wrap">
+  <div class="skill-head reveal"><span class="num">01</span><h2>核心能力<em>&nbsp; — core strengths</em></h2></div>
+  <div class="skill-grid reveal-stagger">
+    <div class="skill">
+      <div class="head"><h3>Prompt Engineering<em>多场景适配 · 模板化</em></h3><span class="lvl">● ● ● ● ●</span></div>
+      <div class="bar"><span style="width:95%"></span></div>
+      <p>擅长设计并优化多场景适配的 Prompt，通过构建高效的自动化工作流提升团队人效与数据验收通过率，实现质量与效率双保障。</p>
+      <div class="proofs"><span class="tag">Qwen API</span><span class="tag">Claude</span><span class="tag accent">扣子 / Coze</span></div>
+    </div>
+    <div class="skill">
+      <div class="head"><h3>Agent 项目全流程<em>data → eval → launch</em></h3><span class="lvl">● ● ● ● ●</span></div>
+      <div class="bar"><span style="width:92%"></span></div>
+      <p>具备从数据构建到模型上线的 AI 项目全流程管理经验。参与过模型训练、产品评测、数据管理等项目，通过规则文档 + 多轮验收确保高质量交付。</p>
+      <div class="proofs"><span class="tag">Function Call</span><span class="tag">Intent</span><span class="tag accent">Badcase 归因</span></div>
+    </div>
+    <div class="skill">
+      <div class="head"><h3>Python 数据工程<em>cleaning · analysis</em></h3><span class="lvl">● ● ● ● ○</span></div>
+      <div class="bar"><span style="width:85%"></span></div>
+      <p>熟练使用 Python 进行数据清洗、批处理、分析脚本开发。自研场景矩阵生成 + Prompt 模板 + API 批量调用脚本，单人日产能 20 → 40。</p>
+      <div class="proofs"><span class="tag">数据清洗</span><span class="tag">批处理</span><span class="tag">可视化分析</span></div>
+    </div>
+    <div class="skill">
+      <div class="head"><h3>自动化工作流<em>workflow · toolchain</em></h3><span class="lvl">● ● ● ● ○</span></div>
+      <div class="bar"><span style="width:82%"></span></div>
+      <p>熟练利用扣子、Claude Code 搭建自动化工作流提升工作效率。自主部署 Open Claw 和 Hermes Agent，并在工作上赋能。</p>
+      <div class="proofs"><span class="tag">扣子</span><span class="tag">Claude Code</span><span class="tag accent">Open Claw</span><span class="tag">Hermes Agent</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="skill-block"><div class="wrap">
+  <div class="skill-head reveal"><span class="num">02</span><h2>工具栈<em>&nbsp; — stack</em></h2></div>
+  <div class="stack-list reveal-stagger">
+    <div class="it"><span class="n">01</span><div class="t">Python</div><span class="u">日常 · Daily</span></div>
+    <div class="it"><span class="n">02</span><div class="t">Qwen API</div><span class="u">批量调用</span></div>
+    <div class="it"><span class="n">03</span><div class="t">Claude Code</div><span class="u">工作流</span></div>
+    <div class="it"><span class="n">04</span><div class="t">扣子 / Coze</div><span class="u">Agent 编排</span></div>
+    <div class="it"><span class="n">05</span><div class="t">Open Claw</div><span class="u">自部署</span></div>
+    <div class="it"><span class="n">06</span><div class="t">Hermes Agent</div><span class="u">自部署</span></div>
+    <div class="it"><span class="n">07</span><div class="t">Matplotlib / Pandas</div><span class="u">分析</span></div>
+    <div class="it"><span class="n">08</span><div class="t">Git · Notion · 飞书</div><span class="u">协同</span></div>
+  </div>
+</div></section>
+
+<section class="skill-block"><div class="wrap">
+  <div class="skill-head reveal"><span class="num">03</span><h2>软性能力<em>&nbsp; — soft skills</em></h2></div>
+  <div class="skill-grid reveal-stagger">
+    <div class="skill">
+      <div class="head"><h3>跨团队对齐<em>cross-function alignment</em></h3><span class="lvl">● ● ● ● ●</span></div>
+      <div class="bar"><span style="width:94%"></span></div>
+      <p>主导产品、工程、算法三方联调——爬坡期每周 3 次联调会，把不同角色的语言统一到同一份规则里。</p>
+    </div>
+    <div class="skill">
+      <div class="head"><h3>标注团队管理<em>team of 15</em></h3><span class="lvl">● ● ● ● ●</span></div>
+      <div class="bar"><span style="width:92%"></span></div>
+      <p>独立管理 15 人标注团队，设计 3-5 天准入考核 + 9 步标注闭环，标注准入率稳定 95%。</p>
+    </div>
+    <div class="skill">
+      <div class="head"><h3>快速学习<em>fast iteration</em></h3><span class="lvl">● ● ● ● ○</span></div>
+      <div class="bar"><span style="width:88%"></span></div>
+      <p>能迅速适应 AI 行业高频的技术迭代节奏，拥有缜密的逻辑思维与多任务并行处理能力。</p>
+    </div>
+    <div class="skill">
+      <div class="head"><h3>英语工作沟通<em>CET-4 · working</em></h3><span class="lvl">● ● ● ○ ○</span></div>
+      <div class="bar"><span style="width:70%"></span></div>
+      <p>英语四级水平，可作为工作语言——阅读英文技术文档、参与英文讨论、撰写英文邮件均可。</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="manifesto reveal">
+  <div class="wrap">
+    <span class="eyebrow">A Note on Skills</span>
+    <p class="big" style="margin-top:16px;">
+      技能列表永远是滞后的——<br>
+      真正重要的是<em>愿意去学</em>下一个。
+    </p>
+  </div>
+</section>
+
+<section class="contact-cta" style="padding:clamp(60px,10vw,140px) 0;text-align:center;">
+  <div class="wrap reveal">
+    <span class="eyebrow">Next</span>
+    <h2 style="font-family:var(--serif-sc);font-weight:700;font-size:clamp(44px,6vw,96px);line-height:1;letter-spacing:-.02em;margin:20px 0;">
+      想看<em class="italic-serif accent-text">具体项目</em>？
+    </h2>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:40px;">
+      <a class="btn accent btn-arrow" href="projects.html">项目案例</a>
+      <a class="btn btn-arrow" href="contact.html">联系我</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-grid">
+    <div><h4>Colophon</h4><p style="font-family:var(--serif-sc);font-size:15px;line-height:1.7;color:#c9c4b5;margin:0;max-width:42ch;">张嘉烜 · 个人杂志。</p></div>
+    <div><h4>Sections</h4><ul><li><a href="index.html">首页</a></li><li><a href="about.html">关于</a></li><li><a href="projects.html">项目</a></li><li><a href="skills.html">技能</a></li></ul></div>
+    <div><h4>More</h4><ul><li><a href="blog.html">札记</a></li><li><a href="contact.html">联系</a></li><li><a href="public/resume.pdf" download>简历 PDF</a></li></ul></div>
+    <div><h4>Channels</h4><ul><li><a href="mailto:2128324212@stu.htu.edu.cn">Email</a></li><li><a href="tel:+8618039304837">+86 180 3930 4837</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Zhang Jiaxuan</span><span>Issue N°004 · Chengdu</span></div>
+</div></footer>
+
+<script src="shared/site.js"></script>
+</body></html>
